@@ -20,7 +20,8 @@ jobs:
             cd /var/www/
             git clone https://${{ secrets.USERNAME }}:${{ secrets.CREDENTIAL }}@github.com/kumarabhishek-github/investorbhaiPackage.git
             cd investorbhaiPackage/ask-me
-            npm run build 
+            npm install
+            npm run build
             pm2 restart ask-me || pm2 start npm --name "ask-me" -- start
             
             
